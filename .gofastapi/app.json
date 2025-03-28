@@ -1,0 +1,9 @@
+{
+    "version": "v1",
+    "project_id": "nPvdTBtFJTlfqfNEKRNNiVJO",
+    "app_id": "hwtRQqtnncqIYVfvTyqoFAsw",
+    "app_type": "static_site",
+    "deploy": {
+        "target_dir": "./dist"
+    }
+}
