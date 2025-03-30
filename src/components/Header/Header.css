@@ -161,7 +161,7 @@
 }
 
 .reservation-btn {
-  background-color: #4CAF50;
+  background-color: #9ed0ea;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -182,30 +182,29 @@
   font-size: 18px;
   font-weight: bold;
   color: #000000;
-  background-color: #f0cd97;
-  box-shadow: 8px 10px 8px 1px rgba(66, 62, 62, 0.288);
+  background-color: #ffffff;
+  box-shadow: 3px 5px 6px 0.5px rgba(66, 62, 62, 0.288);
   border: none;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 4px;
   /* Spacing between icon and text */
   cursor: pointer;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  
   /* Slight shadow for depth */
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .toggle-form-btn:hover {
-  background-color: #d59e7b;
-  transform: scale(1.02);
+  background-color: #ffffff;
+  
   /* Slightly enlarges the button on hover */
 }
 
 .toggle-form-btn:active {
-  transform: scale(0.98);
+  transform: scale(0.99);
   /* Gives a pressed effect */
 }
 
