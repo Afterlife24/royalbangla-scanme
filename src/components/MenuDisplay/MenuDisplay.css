@@ -1,6 +1,7 @@
 .menu-item {
   display: grid;
   grid-template-rows: auto minmax(100px, 2fr) auto;
+  max-height: 35w;
   column-gap: 10px;
   width: 35vw;
   background-color: #e0dede;

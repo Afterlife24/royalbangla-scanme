@@ -57,7 +57,7 @@
 
   border-radius: 10px;
   /* background-color: rgb(200, 221, 233); */
-  background-color: #cfcbe1;
+  background-color: #e2e2e2;
   padding: 10px;
 }
 
@@ -221,7 +221,7 @@ p {
   padding: 10px;
   border: 1px solid #000;
   border-radius: 10px;
-  background-color: #e0e0e0;
+  background-color: #f1f0f0;
 }
 
 .order-item-image {
