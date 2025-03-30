@@ -40,7 +40,7 @@
 
 //   const sendReservationData = async () => {
 //     try {
-//       const response = await fetch("https://server3-kashmir.gofastapi.com/reserveTable", {
+//       const response = await fetch("https://server3-Royal Bangla.gofastapi.com/reserveTable", {
 //         method: "POST",
 //         headers: {
 //           "Content-Type": "application/json",
@@ -86,13 +86,13 @@
 
 //         {!isMenu && (
 //           <div className="welcome">
-//             <h2>KASHMIR</h2>
+//             <h2>Royal Bangla</h2>
 //           </div>
 //         )}
 
 //         {isMenu && (
 //           <div className="welcome">
-//             <h2>KASHMIR</h2>
+//             <h2>Royal Bangla</h2>
 //           </div>
 //         )}
 
@@ -338,13 +338,13 @@ function Header({ onSearchChange, isMenu, isAddpage }) {
 
         {!isMenu && (
           <div className="welcome">
-            <h2>KASHMIR</h2>
+            <h2>Royal Bangla</h2>
           </div>
         )}
 
         {isMenu && (
           <div className="welcome">
-            <h2>KASHMIR</h2>
+            <h2>Royal Bangla</h2>
           </div>
         )}
 
