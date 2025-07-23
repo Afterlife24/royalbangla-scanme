@@ -41,7 +41,7 @@
 
 //   const sendReservationData = async () => {
 //     try {
-//       const response = await fetch("https://royalbangla-server.gofastapi.com/reserveTable", {
+//       const response = await fetch("https://5fz8cdygvi.execute-api.eu-west-3.amazonaws.com/reserveTable", {
 //         method: "POST",
 //         headers: {
 //           "Content-Type": "application/json",
@@ -294,7 +294,7 @@ function Header({ onSearchChange, isMenu, isAddpage }) {
   const sendReservationData = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch("https://royalbangla-server.gofastapi.com/reserveTable", {
+      const response = await fetch("https://5fz8cdygvi.execute-api.eu-west-3.amazonaws.com/reserveTable", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
