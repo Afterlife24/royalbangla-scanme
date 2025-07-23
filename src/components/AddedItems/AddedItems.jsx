@@ -113,7 +113,7 @@ const AddedItems = () => {
     console.log("email ID is",userEmail);
     try {
       setLoading(true);
-      const response = await fetch("https://5fz8cdygvi.execute-api.eu-west-3.amazonaws.com/sendOrder", {
+      const response = await fetch("https://9qgkoj3l45.execute-api.eu-west-3.amazonaws.com/sendOrder", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

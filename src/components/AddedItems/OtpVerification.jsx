@@ -18,7 +18,7 @@ const OtpVerification = ({ onVerify, onCancel, onEmailUpdate }) => {
     setLoading(true);
     setError('');
     try {
-      const response = await fetch('https://5fz8cdygvi.execute-api.eu-west-3.amazonaws.com/sendotp', {
+      const response = await fetch('https://9qgkoj3l45.execute-api.eu-west-3.amazonaws.com/sendotp', {
         method: 'POST',
         body: JSON.stringify({ email }),
         headers: { 'Content-Type': 'application/json' },
@@ -45,7 +45,7 @@ const OtpVerification = ({ onVerify, onCancel, onEmailUpdate }) => {
     }
 
     try {
-      const response = await fetch('https://5fz8cdygvi.execute-api.eu-west-3.amazonaws.com/verify', {
+      const response = await fetch('https://9qgkoj3l45.execute-api.eu-west-3.amazonaws.com/verify', {
         method: 'POST',
         body: JSON.stringify({ email, otp: otpCheck }),
         headers: { 'Content-Type': 'application/json' },
