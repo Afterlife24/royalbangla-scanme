@@ -1,17 +1,15 @@
+/* ── Overlay ────────────────────────────────────────────────── */
 .popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.7); /* Darker background for better contrast */
+  inset: 0;
+  background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s;
-  z-index: 9999; /* Ensure it's on top of other content */
+  transition: opacity 0.25s ease, visibility 0.25s;
+  z-index: 9999;
 }
 
 .popup-overlay.show {
@@ -19,146 +17,161 @@
   visibility: visible;
 }
 
+/* ── Modal Card ─────────────────────────────────────────────── */
 .popup-content {
-  background-color: #ffffff; /* White background for a clean look */
-  border-radius: 12px;
-  padding: 25px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-  width: 70%;
-  max-width: 500px; /* Ensure it doesn't get too large on bigger screens */
-  transform: scale(0.9);
-  transition: transform 0.4s ease;
+  background: var(--clr-bg);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.5rem 1.5rem;
+  box-shadow: var(--shadow-lg);
+  width: 88%;
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  transform: scale(0.94);
+  transition: transform 0.25s ease;
+  position: relative;
 }
 
-.popup-content > h1 {
-  margin-bottom: 1rem;
-  font-size: 1.8rem;
-  color: #333; /* Darker text for better readability */
-}
+.popup-overlay.show .popup-content { transform: scale(1); }
 
-.popup-overlay.show .popup-content {
-  transform: scale(1);
-}
-
+/* ── Close Icon ─────────────────────────────────────────────── */
 .popup-item-close {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 12px; /* Reduced size of the close icon */
-  height: 12px; /* Proportional height */
-  opacity: 0.7;
+  top: 0.85rem;
+  right: 0.9rem;
+  width: 22px;
+  height: 22px;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  opacity: 0.5;
+  transition: opacity var(--transition), transform var(--transition);
 }
 
-.popup-item-close:hover {
-  opacity: 1;
+.popup-item-close:hover { opacity: 1; transform: scale(1.1); }
+.popup-item-close-icon  { width: 100%; height: 100%; }
+
+/* ── Item Name ──────────────────────────────────────────────── */
+.popup-content > h1 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-bottom: 0.5rem;
 }
 
-.popup-item-close-icon {
-  width: 100%; /* Ensures the icon scales with the container */
-  height: 100%;
-}
-
+/* ── Image ──────────────────────────────────────────────────── */
 .image-loading-placeholder {
-  width: 200px;
-  height: 200px;
-  background: #f5f5f5;
+  width: 160px;
+  height: 160px;
+  background: var(--clr-bg-soft);
+  border-radius: var(--radius-md);
   display: flex;
-  justify-content: center;
   align-items: center;
-  font-size: 14px;
-  color: #aaa;
-  border-radius: 50%;
+  justify-content: center;
+  font-size: 0.82rem;
+  color: var(--clr-text-light);
+  margin: 0.75rem 0;
 }
 
 .popup-item-img {
-  width: 60%; /* Reduced width for a cleaner layout */
-  margin: 1rem auto; 
-  text-align: center;
+  width: 70%;
+  margin: 0.75rem auto;
 }
 
 .popup-item-img img {
   width: 100%;
-  border-radius: 15%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add some shadow to the image */
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
   transition: transform 0.3s ease;
 }
 
-.popup-item-img img:hover {
-  transform: scale(1.05); /* Slight hover effect */
-}
+.popup-item-img img:hover { transform: scale(1.03); }
 
+/* ── Description & Price ────────────────────────────────────── */
 .popup-item-desc {
-  margin: 0.6rem 0;
-  font-size: 1rem;
-  font-weight: 600;
-  color: #333333; /* Softer color for the description */
-}
-.popup-item-price{
-  font-weight: bold;
+  font-size: 0.85rem;
+  color: var(--clr-text-muted);
+  line-height: 1.55;
+  margin-bottom: 0.35rem;
 }
 
+.popup-item-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-accent);
+  margin-bottom: 0.75rem;
+}
+
+/* ── Buttons ────────────────────────────────────────────────── */
 .popup-buttons {
   display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 20px;
   align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .popup-buttons button {
-  padding: 12px 18px;
+  padding: 0.6rem 1rem;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
   cursor: pointer;
-  font-size: 0.95rem;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background var(--transition), transform var(--transition);
 }
 
+.popup-buttons button:hover { transform: translateY(-1px); }
+.popup-buttons button:active { transform: translateY(0); }
+
 .popup-buttons .quantity-button {
-  background-color: #ddd;
-  color: #333;
+  background: var(--clr-bg-soft);
+  color: var(--clr-text);
+  border: 1.5px solid var(--clr-border);
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.1rem;
 }
 
 .popup-buttons .quantity-button:hover {
-  background-color: #bbb;
+  background: var(--clr-accent-muted);
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
 }
 
 .popup-buttons span {
   font-weight: 700;
   font-size: 1rem;
-  color: #333;
-  padding: 0 15px;
+  color: var(--clr-text);
+  min-width: 24px;
+  text-align: center;
 }
 
+/* Add button */
 .popup-buttons button:nth-last-child(2) {
-  background-color: #28a745;
-  color: white;
+  background: var(--clr-accent);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
 }
 
-.popup-buttons button:nth-last-child(2):hover {
-  background-color: #218838;
-}
+.popup-buttons button:nth-last-child(2):hover { background: var(--clr-accent-dark); }
 
+/* Close button */
 .popup-buttons button:last-child {
-  background-color: #dc3545;
-  color: white;
+  background: var(--clr-bg-soft);
+  color: var(--clr-text-muted);
+  border: 1.5px solid var(--clr-border);
 }
 
 .popup-buttons button:last-child:hover {
-  background-color: #c82333;
-}
-
-.popup-buttons button:active {
-  transform: scale(0.98); /* Adds a subtle click effect */
-}
-
-.popup-buttons button:focus {
-  outline: none;
-  box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3); /* Focus state for accessibility */
+  background: var(--clr-border);
+  color: var(--clr-text);
 }

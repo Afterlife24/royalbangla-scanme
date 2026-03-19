@@ -368,7 +368,7 @@ function Header({ onSearchChange, isMenu, isAddpage }) {
         )}
       </div>
 
-      {!isAddpage && !isMenu && tableNum === 0 && (
+      {!isAddpage && !isMenu && (tableNum === 0 || tableNum === null) && (
         <>
           <button
             onClick={toggleFormVisibility}
@@ -482,7 +482,7 @@ function Header({ onSearchChange, isMenu, isAddpage }) {
         </>
       )}
 
-      {!isAddpage && !isMenu && tableNum === 0 && (
+      {!isAddpage && !isMenu && (tableNum === 0 || tableNum === null) && (
         <>
           <h3 className="order-heading">cliquez et récupérez</h3>
         </>

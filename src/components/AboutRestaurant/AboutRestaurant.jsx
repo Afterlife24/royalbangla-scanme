@@ -12,7 +12,7 @@ const AboutRestaurant = () => {
     <Header isAddpage={isAboutRes} />
     <div className="main-container">
         <div className="restaurant-heading"><h2>{restaurantheading}</h2></div>
-        <div className="restaurant-img"><img src="src/assets/pictures/suraj_img.png" alt="" /></div>
+        <div className="restaurant-img"><img src={generalpics.suraj_img} alt={restaurantheading} /></div>
         <div className="restaurant-desc">Zayn et Falluk, deux frères de Lahore, au Pakistan, ont toujours eu des rêves plus grands que les ruelles étroites de leur ville natale. Ils ont grandi en aidant leur père dans son petit restaurant, où ils ont appris l'essence de la cuisine pakistanaise authentique. Cependant, la vie à Lahore était difficile et les opportunités limitées. Sachant que ses fils avaient du potentiel, leur père a fait un énorme sacrifice : il a vendu un petit terrain qui était dans la famille depuis des générations. L'argent obtenu a suffi à donner à ses fils une chance de se battre pour quelque chose de plus grand.
 
 Avec cet argent, Zayn et Falluk sont partis pour la France, choisissant Nantes comme destination. À leur arrivée, la vie n'a pas été facile. Les frères ont trouvé du travail dans plusieurs restaurants indiens à travers la ville, où ils ont appris les subtilités de la gestion d'une cuisine et l'aspect commercial d'un restaurant. En économisant ce qu'ils pouvaient, ils ont aussi commencé à maîtriser l'art délicat de mélanger les saveurs indiennes et pakistanaises pour créer quelque chose d'unique.

@@ -1,10 +1,20 @@
-footer img{
-    width: 25px;
+.footer {
+  width: 100%;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--clr-text-light);
+  background: var(--clr-bg);
+  border-top: 1px solid var(--clr-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: auto;
 }
-.footer{
-    width: 100%;
-    height: auto;
-    text-align: center;
-    margin: 0.3rem;
-    opacity: 0.8;
+
+.footer img {
+  width: 22px;
+  opacity: 0.6;
 }
