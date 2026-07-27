@@ -47,11 +47,18 @@ function Landingpage() {
   if (loading) {
     return (
       <div className="loading-screen">
-        <img src={generalpics.suraj_img} alt="surajlogo" />
-        Propulsé par&nbsp;
-        <span className="scanme_logo">
+        <div className="loading-brand">
+          <img src={generalpics.suraj_img} alt="surajlogo" className="loading-logo" />
+          <h1 className="loading-title">Royal Bangla</h1>
+          <p className="loading-subtitle">Preparing your menu...</p>
+        </div>
+        <div className="loading-spinner">
+          <div className="spinner-ring"></div>
+        </div>
+        <div className="loading-powered">
+          <span>Propulsé par</span>
           <img src={icons.scanme_logo} alt="scanmelogo" />
-        </span>
+        </div>
       </div>
     );
   }

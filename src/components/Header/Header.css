@@ -1,424 +1,267 @@
+/* Header */
 .header {
-  margin-top: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
-  width: 100%;
-  box-sizing: border-box;
+  padding: var(--space-md) var(--space-lg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .menu-icon,
 .pallet-icon,
 .home-icon {
   cursor: pointer;
-  width: 30px;
-  transition: width 0.3s ease;
+  width: 24px;
+  height: 24px;
+  opacity: 0.7;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.menu-icon:hover,
+.pallet-icon:hover,
+.home-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
 }
 
 .welcome {
   flex-grow: 1;
   text-align: center;
-  font-family: "Open Sans";
-  font-weight: 400;
-  font-size: 1.25rem;
-  margin: 0;
 }
 
 .welcome h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
   margin: 0;
+  letter-spacing: -0.02em;
 }
 
-
-@media (max-width: 768px) {
-
-  .menu-icon,
-  .pallet-icon,
-  .home-icon {
-    width: 25px;
-  }
-
-  .welcome {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 480px) {
-
-  .menu-icon,
-  .pallet-icon,
-  .home-icon {
-    width: 20px;
-  }
-
-  .welcome {
-    font-size: 0.9rem;
-  }
-}
-
-
-
-
-
-
+/* Search Bar */
 .wrap-input-17 {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 1rem;
-}
-
-
-.wrap-input-17 * {
-  box-sizing: border-box;
+  padding: var(--space-md) var(--space-lg);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .wrap-input-17 .search-box {
-  width: fit-content;
-  height: fit-content;
-  position: relative;;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
 }
 
 .wrap-input-17 .input-search {
-  height: 50px;
-  width: 88vw;
-  border-style: none;
-  padding: 10px;
-  font-size: 18px;
-  letter-spacing: 2px;
-  outline: none;
-  border-radius: 25px;
-  background-color: #ffffff;
-  color: #000000;
-  padding-left: 1rem;
+  height: 48px;
+  width: 100%;
+  border: 1px solid var(--color-border);
+  padding: 0 48px 0 var(--space-lg);
+  font-size: var(--text-base);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.wrap-input-17 .input-search:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.1);
 }
 
 .wrap-input-17 .input-search::placeholder {
-  color: rgba(0, 0, 0, 0.5);
-  font-size: 18px bold;
-  letter-spacing: 2px;
-  font-weight: bold;
-  padding-left: 0.3rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+  font-weight: 400;
 }
 
 .wrap-input-17 .btn-search {
-  width: 50px;
-  height: 50px;
-  border-style: none;
-  font-size: 20px;
-  font-weight: bold;
-  outline: none;
+  width: 40px;
+  height: 40px;
+  border: none;
+  font-size: 16px;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   position: absolute;
-  right: 6px;
-  color: #ffffff;
+  right: 4px;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: transparent;
-  pointer-events: painted;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.reservation-form {
-  padding: 15px;
-  background-color: #f5f5f5;
-  border-radius: 8px;
-  margin: 20px 0;
-  text-align: center;
+/* Reservation Toggle Button */
+.toggle-form-btn {
+  margin: var(--space-md) var(--space-lg);
+  width: calc(100% - var(--space-xl) * 2);
+  padding: var(--space-md) var(--space-lg);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  letter-spacing: 0.02em;
+}
 
+.toggle-form-btn:hover {
+  background: var(--color-primary);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.toggle-form-btn:active {
+  transform: translateY(0);
+}
+
+/* Reservation Form */
+.reservation-form {
+  padding: var(--space-lg);
+  margin: 0 var(--space-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reservation-timing-notice {
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+  text-align: center;
 }
 
 .reservation-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
 }
 
 .reservation-input {
   display: flex;
-  align-items: center;
-  gap: 5px;
-  flex: 1;
-}
-
-.reservation-icon {
-  width: 20px;
-  height: 20px;
+  flex-direction: column;
 }
 
 .reservation-date,
 .reservation-time,
 .reservation-persons,
 .reservation-phone,
-.reservation-name {
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
+.reservation-name,
+.reservation-email {
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-sm);
   width: 100%;
-  min-width: 70px;
+  transition: border-color var(--transition-fast);
+  background: var(--color-bg);
+}
+
+.reservation-date:focus,
+.reservation-time:focus,
+.reservation-persons:focus,
+.reservation-phone:focus,
+.reservation-name:focus,
+.reservation-email:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(232, 93, 4, 0.08);
 }
 
 .reservation-btn {
-  background-color: #9ed0ea;
+  grid-column: 1 / -1;
+  background: var(--color-primary);
   color: white;
-  padding: 10px 20px;
+  padding: var(--space-md) var(--space-xl);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--radius-sm);
+  font-size: var(--text-base);
+  font-weight: 600;
   cursor: pointer;
+  transition: all var(--transition-fast);
 }
 
-.reservation-btn:hover {
-  background-color: #45a049;
+.reservation-btn:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
-
-.toggle-form-btn {
-  margin-top: 20px;
-  margin-bottom: 15px;
-  width: 100%;
-  padding: 16px;
-  font-size: 18px;
-  font-weight: bold;
-  color: #000000;
-  background-color: #ffffff;
-  box-shadow: 3px 5px 6px 0.5px rgba(66, 62, 62, 0.288);
-  border: none;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  /* Spacing between icon and text */
-  cursor: pointer;
-  text-align: center;
-  
-  /* Slight shadow for depth */
+.reservation-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-.toggle-form-btn:hover {
-  background-color: #ffffff;
-  
-  /* Slightly enlarges the button on hover */
-}
-
-.toggle-form-btn:active {
-  transform: scale(0.99);
-  /* Gives a pressed effect */
-}
-
-.button-icon {
-  font-size: 20px;
-  /* Icon size */
-}
-
-
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.wednesday-message h3 {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  letter-spacing: 1px;
-}
-
-/* Hover Effect for Larger Screens */
-.wednesday-message:hover {
-  background: linear-gradient(90deg, #ffcccb, #ffe4e1);
-  box-shadow: 0 6px 15px rgba(255, 107, 107, 0.5);
-  transform: scale(1.05);
-  transition: all 0.3s ease-in-out;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-  .wednesday-message {
-    font-size: 18px;
-    padding: 12px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .wednesday-message {
-    font-size: 16px;
-    padding: 10px 15px;
-    border: 1.5px solid #ff6b6b;
-  }
-}
-
-@media (max-width: 320px) {
-  .wednesday-message {
-    font-size: 14px;
-    padding: 8px 12px;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.wednesday-message h3 {
-  margin: 0;
-  padding: 0;
-  font-family: 'Arial', sans-serif;
-  letter-spacing: 1px;
-}
-
-/* Add hover effect for interactivity */
-.wednesday-message:hover {
-  background: linear-gradient(90deg, #ffcccb, #ffe4e1);
-  box-shadow: 0 6px 15px rgba(255, 107, 107, 0.5);
-  transform: scale(1.05);
-  transition: all 0.3s ease-in-out;
-}
-
-
-
-
-/* .order-online-heading {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #ff5733;
-  text-align: center;
-  padding: 10px;
-  background: linear-gradient(90deg, #ff8a00, #e52e71);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: white;
-  animation: glow 2s infinite alternate;
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px #ff8a00, 0 0 20px #e52e71, 0 0 30px #ff8a00;
-  }
-  to {
-    text-shadow: 0 0 20px #ff5733, 0 0 30px #ff8a00, 0 0 40px #e52e71;
-  }
-} */
-
+/* Order Heading */
 .order-heading {
-  font-family: 'Source Sans Pro', sans-serif;
   text-align: center;
-  /* Center the heading */
-  font-size: 24px;
-  /* Increase the font size */
-  font-weight: bold;
-  /* Make the text bold */
-  color: #333;
-  /* Set a dark color for the text */
-  margin: 20px 0;
-  /* Add margin above and below the heading */
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text-secondary);
   text-transform: uppercase;
-  /* Transform text to uppercase for emphasis */
+  letter-spacing: 0.1em;
+  margin: var(--space-md) 0;
 }
 
+/* Wednesday Message */
+.wednesday-message {
+  text-align: center;
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-md) var(--space-lg);
+  background: linear-gradient(135deg, #fff5f5, #ffe8e8);
+  border-radius: var(--radius-md);
+  border: 1px solid #fecaca;
+}
+
+.wednesday-message h3 {
+  margin: 0;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary-dark);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
   .reservation-row {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 15px;
-  }
-
-  .reservation-input {
-    width: 48%;
-  }
-
-  .reservation-input:nth-child(3),
-  .reservation-input:nth-child(2),
-  .reservation-input:nth-child(1) {
-    width: 100%;
-  }
-
-  .reservation-btn {
-    padding: 12px;
-    width: 100%;
+    grid-template-columns: 1fr;
   }
 }
 
-
-
-/* Adding icons for Date and Time inputs on mobile screens */
-@media (max-width: 768px) {
-
-  .reservation-input {
-    position: relative;
-    /* For positioning the icons */
-  }
-
-  /* Calendar icon for date input */
-  .reservation-date {
-    padding-left: 30px;
-    /* Space for the icon */
-    background-image: url('https://img.icons8.com/ios-glyphs/30/calendar.png');
-    background-size: 20px;
-    background-repeat: no-repeat;
-    background-position: 8px center;
-  }
-
-  /* Clock icon for time input */
-  .reservation-time {
-    padding-left: 30px;
-    /* Space for the icon */
-    background-image: url('https://img.icons8.com/ios-glyphs/30/clock.png');
-    background-size: 20px;
-    background-repeat: no-repeat;
-    background-position: 8px center;
-  }
-}
-
-
-
-.reservation-timing-notice {
-  font-size: 1rem;
-  color: #ff4500;
-  /* Orange color for visibility */
-  margin-bottom: 1rem;
-  /* Space between notice and form */
-  text-align: center;
-  /* Center align the text */
-}
-
-/* Responsive styling for mobile screens */
-@media (max-width: 768px) {
-  .reservation-timing-notice {
-    font-size: 1rem;
-    /* Slightly smaller font for mobile */
-    margin-bottom: 0.8rem;
-    /* Adjust margin for better spacing */
-    padding: 0 10px;
-    /* Add padding for better readability on small screens */
-  }
-}
-
-/* Additional responsiveness for smaller devices like phones */
 @media (max-width: 480px) {
-  .reservation-timing-notice {
-    font-size: 1rem;
-    /* Smaller font size for very small screens */
-    margin-bottom: 0.5rem;
-    /* Compact margin */
-    line-height: 1.4;
-    /* Increase line spacing for readability */
+  .header {
+    padding: var(--space-md);
+  }
+  
+  .welcome h2 {
+    font-size: var(--text-lg);
+  }
+
+  .toggle-form-btn {
+    margin: var(--space-md);
+    width: calc(100% - var(--space-xl));
+    font-size: var(--text-xs);
   }
 }

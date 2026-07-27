@@ -149,11 +149,18 @@ const ItemDetails = () => {
   if (loading) {
     return (
       <div className="loading-screen">
-        <img src={generalpics.suraj_img} alt="surajlogo" />
-        Powered by&nbsp;
-        <span className="scanme_logo">
+        <div className="loading-brand">
+          <img src={generalpics.suraj_img} alt="surajlogo" className="loading-logo" />
+          <h1 className="loading-title">Royal Bangla</h1>
+          <p className="loading-subtitle">Loading dish...</p>
+        </div>
+        <div className="loading-spinner">
+          <div className="spinner-ring"></div>
+        </div>
+        <div className="loading-powered">
+          <span>Powered by</span>
           <img src={icons.scanme_logo} alt="scanmelogo" />
-        </span>
+        </div>
       </div>
     );
   }
